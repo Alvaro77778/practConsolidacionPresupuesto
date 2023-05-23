@@ -5,7 +5,7 @@ var arrCantidadGastosEliminar = [];
 
 
 
-function sumarGastos(){
+sumarGastos = () =>{
     let gastosSumados=0;
 
     for(let i=0; i<arrCantidadGastos.length;i++){
@@ -17,7 +17,7 @@ function sumarGastos(){
 
 
 
-function muestroPresup(){
+muestroPresup = () =>{
     let inputCalcular = document.getElementById('inputCalc').value;
     let cajaPresupuesto = document.getElementById('pPresupuesto');
     let peso = document.createElement('span');
@@ -27,7 +27,7 @@ function muestroPresup(){
 }
 
 
-function buttonIcon(indice){
+buttonIcon = (indice) => {
 
      arrNombresGastosEliminar =[];
      arrCantidadGastosEliminar=[];
@@ -68,7 +68,7 @@ function buttonIcon(indice){
 }
 
 
-function eliminarContenido(){
+eliminarContenido = () => {
     let bodyTabla = document.getElementById('bodyTabla');
 
     bodyTabla.innerText = '';
@@ -76,7 +76,7 @@ function eliminarContenido(){
 
 
 
-function pintarGastosEliminar(){
+pintarGastosEliminar = () =>{
     let tablaBody = document.getElementById('bodyTabla');
     let limiteEliminar = arrNombresGastosEliminar.length;
     console.log('limite eliminar:', limiteEliminar);
@@ -123,7 +123,7 @@ function pintarGastosEliminar(){
 
 
 
-function pintarGastos(){
+pintarGastos = () =>{
     let tableBody = document.getElementById('bodyTabla');
    
 
@@ -164,7 +164,7 @@ function pintarGastos(){
 
 
 
-function muestroNombGasto(){
+muestroNombGasto = () =>{
     let inputNombGasto = document.getElementById('nombreGasto').value;
     let inputValorGasto = document.getElementById('valorGasto').value;
 
@@ -194,7 +194,7 @@ function muestroNombGasto(){
 
 
 
-function activoEventos(){
+activoEventos = () =>{
     let btnCalcular = document.getElementById('calcular');
     btnCalcular.addEventListener('click', muestroPresup);
 
