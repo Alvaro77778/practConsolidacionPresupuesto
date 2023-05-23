@@ -1,11 +1,13 @@
 var arrNombresGastos =[];
+var arrNombresGastosEliminar = [];
 var arrCantidadGastos=[];
-var arrRowTablas=[];
+var arrCantidadGastosEliminar = [];
+
 
 
 function sumarGastos(){
     let gastosSumados=0;
-    // recorre el arreglo de cantidad Gastos y suma su contenido
+
     for(let i=0; i<arrCantidadGastos.length;i++){
         gastosSumados = gastosSumados + arrCantidadGastos[i];
     }
@@ -25,15 +27,101 @@ function muestroPresup(){
 }
 
 
-function buttonIcon(){
+function buttonIcon(indice){
+
+     arrNombresGastosEliminar =[];
+     arrCantidadGastosEliminar=[];
+     console.log(indice);
     
-    
-    let tableBody = document.getElementById('bodyTabla');
-    tableBody.removeChild();
+    arrNombresGastos.splice(indice,1);
+    arrCantidadGastos.splice(indice,1);
+
+    console.log(arrNombresGastos);
+    console.log(arrCantidadGastos);
+
+    eliminarContenido();
+
+    for(let i = 0; i<arrNombresGastos.length; i++){
+        arrNombresGastosEliminar.push(arrNombresGastos[i]);
+        arrCantidadGastosEliminar.push(arrCantidadGastos[i]);
+
+        
+    }
+    console.log('arrayNombreGastosEliminar: ',arrNombresGastosEliminar);
+    console.log('arrCantidadGastosEliminar:', arrCantidadGastosEliminar);
+
+    let pGastos = document.getElementById('pGastos');
+    let pSaldo = document.getElementById('pSaldo');
+    let cajaPresupuesto = document.getElementById('pPresupuesto').innerText;
+    let acumulado = 0;
+
+    for(let i = 0; i<arrCantidadGastos.length; i++){
+        acumulado = acumulado + arrCantidadGastos[i];
+    }
+
+    pGastos.innerText = acumulado;
+
+    let elSaldo = parseFloat(cajaPresupuesto) - parseFloat(acumulado);
+    pSaldo.innerText = elSaldo;
+
+    pintarGastosEliminar()
 }
 
 
-// aqui voy, estoy pasando los datos al arreglo para poder eliminar el ultimo dato y se elimine de la tabla
+function eliminarContenido(){
+    let bodyTabla = document.getElementById('bodyTabla');
+
+    bodyTabla.innerText = '';
+}
+
+
+
+function pintarGastosEliminar(){
+    let tablaBody = document.getElementById('bodyTabla');
+    let limiteEliminar = arrNombresGastosEliminar.length;
+    console.log('limite eliminar:', limiteEliminar);
+
+
+
+
+    for(let j = 0; j<limiteEliminar; j++){
+    let unTrNuevo = document.createElement('tr');
+
+    let unThNuevo = document.createElement('th');
+    unThNuevo.scope = 'row';
+    unThNuevo.innerText = '*';
+    let unTdNuevo = document.createElement('td')
+    
+    let segundoTdNuevo = document.createElement('td');
+
+    
+    let tercerTdNuevo = document.createElement('td');   
+
+    console.log([j]);
+
+    unTdNuevo.innerText = arrNombresGastosEliminar[j];
+    console.log('arrNombresGastosEliminar[j]:', arrNombresGastosEliminar[j]);
+
+    segundoTdNuevo.innerText = arrCantidadGastosEliminar[j];
+
+    
+    tercerTdNuevo.classList.add('bi');
+    tercerTdNuevo.classList.add('bi-trash');
+    tercerTdNuevo.setAttribute('type', 'button');
+    tablaBody.appendChild(unTrNuevo);
+    unTrNuevo.appendChild(unThNuevo);
+    unTrNuevo.appendChild(unTdNuevo);
+    unTrNuevo.appendChild(segundoTdNuevo);
+    unTrNuevo.appendChild(tercerTdNuevo);
+        
+    tercerTdNuevo.setAttribute('onClick', `buttonIcon(${j})`);
+    }
+
+}
+
+
+
+
 
 function pintarGastos(){
     let tableBody = document.getElementById('bodyTabla');
@@ -53,24 +141,24 @@ function pintarGastos(){
     tercerTdNuevo.classList.add('bi');
     tercerTdNuevo.classList.add('bi-trash');
     tercerTdNuevo.setAttribute('type', 'button');
-    tercerTdNuevo.setAttribute('onClick', 'buttonIcon()');
+    
 
 
     for(let i=0; i<arrNombresGastos.length; i++){
-        // recorremos el arreglo y extraemos nombre
+
         unTdNuevo.innerText = arrNombresGastos[i];
-        // recorremos el arreglo y extraemos valor
+   
         segundoTdNuevo.innerText = arrCantidadGastos[i];
 
-        // enviamos a los párrafos correspondientes con append
         tableBody.appendChild(unTrNuevo);
         unTrNuevo.appendChild(unThNuevo);
         unTrNuevo.appendChild(unTdNuevo);
         unTrNuevo.appendChild(segundoTdNuevo);
         unTrNuevo.appendChild(tercerTdNuevo);
+        
+        tercerTdNuevo.setAttribute('onClick', `buttonIcon(${i})`);
     }
 
-    // elParrafoValor.innerText = valorCantidadGasto;
 }
 
 
@@ -80,7 +168,6 @@ function muestroNombGasto(){
     let inputNombGasto = document.getElementById('nombreGasto').value;
     let inputValorGasto = document.getElementById('valorGasto').value;
 
-    // almacenamos en los arreglos los gastos añadidos
     arrNombresGastos.push(inputNombGasto);
     arrCantidadGastos.push(parseFloat(inputValorGasto));
 
@@ -102,49 +189,6 @@ function muestroNombGasto(){
 
     cajaSaldo.innerText = saldo;
 
-
-    /* 
-    let bodyTabla = document.getElementById('bodyTabla');
-
-
-    
-    let creoUnTr = document.createElement('tr');
-    
-    console.log(arrRowTablas);
-    bodyTabla.appendChild(creoUnTr);
-    let creoUnTh = document.createElement('th');
-
-    for(let i=0; i<arrNombresGastos.length; i++){
-        creoUnTr.setAttribute('id', `${[i]}`);
-    };
-    arrRowTablas.push(creoUnTr);
-    creoUnTh.scope = 'row';
-    creoUnTh.innerText = '*';
-    creoUnTr.appendChild(creoUnTh);
-
-    let creoUnTd = document.createElement('td');
-    creoUnTr.appendChild(creoUnTd);
-
-    let creoSegundoTd = document.createElement('td');
-    creoUnTr.appendChild(creoSegundoTd);
-
-    let creoTercerTd = document.createElement('td');
-    let creoIparaIcono = document.createElement('i');
-    creoIparaIcono.classList.add('bi');
-    creoIparaIcono.classList.add('bi-trash');
-    creoIparaIcono.setAttribute('type', 'button');
-    creoIparaIcono.setAttribute('onCLick', 'buttonIcon()');
-    creoTercerTd.appendChild(creoIparaIcono);
-
-    creoUnTr.appendChild(creoTercerTd);
-
-
-    
-
-    creoUnTd.innerText = inputNombGasto;
-    
-    creoSegundoTd.innerText = inputValorGasto
-   */
     pintarGastos();
 }
 
