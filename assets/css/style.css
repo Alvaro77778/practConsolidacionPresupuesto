@@ -1,6 +1,10 @@
+
+.tituloPresupuesto{
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgb(0, 0, 0) 10%, rgb(45, 46, 51)100%);
+    }
 @media screen and (max-width: 500px) and (min-width: 400px) {
     .fontSizeTitulos{
-
        font-size: 16px;
        font-weight: 500;
     }
@@ -16,4 +20,14 @@
         width: 100%;
     }
 
+    .fondo{
+    background: rgb(66,0,119,1);
+    background: linear-gradient(0deg, rgb(43, 2, 77) 0%,rgb(180, 82, 2), rgb(20, 2, 180) 100%);
+    }
+
+    .tituloPresupuesto{
+    background: rgb(192, 47, 11);
+    background: linear-gradient(0deg,rgb(0, 3, 48) 1%, rgb(38, 0, 53)100%);
+    }
+    
 }
