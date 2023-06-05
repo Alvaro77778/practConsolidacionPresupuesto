@@ -13,7 +13,7 @@
 <body id="body" class="fondo" onload="activoEventos()">
     <div class="container pb-5">
         <div class="container">
-            <div class="row mb-4 mt-4 py-2 text-center text-white rounded-3 tituloPresupuesto" >
+            <div class="row mb-4 mt-4 py-2 text-center text-white rounded-3 tituloPresupuestoPrincipal" >
                 <h4>Presupuesto APP</h4>
             </div>
         </div>
@@ -28,7 +28,7 @@
                         <h6 class="card-title py-2 text-black">Ingresa Tu Presupuesto</h6>
                       
                       <input id="inputCalc" class="form-control" type="text" value="">
-                      <a href="#" class="btn bg-success btn-sm bg-opacity-50 mt-3 fw-semibold fs-6 text-black" id="calcular">Añadir Presupuesto</a>
+                      <a href="#" class="btn fondoBotonPresupuesto mt-3 fs-6 text-black fw-bold"  id="calcular">Añadir Presupuesto</a>
                     </div>
                   </div>
                   <div class="card mb-3 mx-2">
@@ -39,7 +39,7 @@
                       <input class="form-control" id="nombreGasto" type="text" value="">
                       <h6 class="card-title py-2 text-black">Ingresa La Cantidad Del Gasto</h6>
                       <input class="form-control" type="text" id="valorGasto" value="">
-                      <a href="#" class="btn bg-danger btn-sm bg-opacity-75 mt-3 fw-semibold fs-6 text-black" id="btnGasto">Añadir Gasto</a>
+                      <a href="#" class="btn fondoBotonGasto mt-3 fs-6 text-black fw-bold" id="btnGasto">Añadir Gasto</a>
                     </div>
                   </div>
                   
@@ -47,7 +47,8 @@
             </div>
             <div class="col-md-8">
             <div class="py-3 mt-2">
-                <div class="card mt-4 mb-4 rounded">
+              <h2 class="text-center fs-6 fontSizeTitulosTablaLista fontSizeTitulosTabla text-light">Totales</h2>
+                <div class="card mt-md-4 mb-4 rounded">
                     <div class="card-body bg-secondary bg-opacity-10 rounded">
                       
                       <div class="container mt-2">
@@ -88,6 +89,7 @@
                 </div>
                 
                   <div class="container py-2">
+                  <h2 class="text-center fs-6 fontSizeTitulosTablaLista text-light">Lista De Gastos</h2>
                   <div class="card mx-1">
                     <div class="card-body bg-secondary bg-opacity-10">
                       
@@ -98,7 +100,7 @@
                             <p class="col-md-4 border-bottom border-secondary text-center text-danger">Valor</p>
                             <p class="col-md-4 border-bottom border-secondary">.</p>
                         </div>-->
-
+                        
                         <div class="row">
                             <table class="table">
                                 <thead>

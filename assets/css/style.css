@@ -3,6 +3,17 @@
     background: rgb(0, 0, 0);
     background: linear-gradient(0deg, rgb(0, 0, 0) 10%, rgb(45, 46, 51)100%);
     }
+    .fondoBotonGasto{
+        background: rgb(192, 47, 11);
+    background: linear-gradient(0deg, rgb(94, 1, 1)1%, rgb(165, 9, 9)100%);
+    opacity: 95%;
+    }
+
+    .fondoBotonPresupuesto{
+        background: rgb(192, 47, 11);
+    background: linear-gradient(0deg, rgb(0, 37, 15)1%, rgb(0, 104, 22)100%);
+    opacity: 95%;
+    }
 @media screen and (max-width: 500px) and (min-width: 400px) {
     .fontSizeTitulos{
        font-size: 16px;
@@ -14,6 +25,12 @@
 
         font-size: 16px;
         font-weight: bold;
+     }
+     .fontSizeTitulosTablaLista{
+
+        font-size: 16px;
+        font-weight: bold;
+        border-bottom: 1px solid rgb(214, 0, 0);
      }
 
     #ancho{
@@ -30,4 +47,22 @@
     background: linear-gradient(0deg,rgb(0, 3, 48) 1%, rgb(38, 0, 53)100%);
     }
     
+    .tituloPresupuestoPrincipal{
+        background: rgb(192, 47, 11);
+        background: linear-gradient(0deg,rgb(38, 0, 53) 1%, rgb(82, 2, 231)100%);
+        }
+
+
+    .fondoBotonGasto{
+        background: rgb(192, 47, 11);
+    background: linear-gradient(0deg, rgb(107, 1, 1)1%, rgb(228, 3, 3)100%);
+    opacity: 90%;
+    }
+
+    .fondoBotonPresupuesto{
+        background: rgb(192, 47, 11);
+    background: linear-gradient(0deg, rgb(0, 59, 10)1%, rgb(1, 160, 36)100%);
+    opacity: 90%;
+    }
 }
+
