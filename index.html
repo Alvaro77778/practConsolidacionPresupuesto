@@ -7,6 +7,7 @@
     <title>Presupuesto App</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 <body id="body" onload="activoEventos()">
@@ -27,7 +28,7 @@
                         <h6 class="card-title py-2 text-black">Ingresa Tu Presupuesto</h6>
                       
                       <input id="inputCalc" class="form-control" type="text" value="">
-                      <a href="#" class="btn bg-success btn-sm bg-opacity-50 mt-3 fw-semibold fs-6 text-black" id="calcular">Calcular</a>
+                      <a href="#" class="btn bg-success btn-sm bg-opacity-50 mt-3 fw-semibold fs-6 text-black" id="calcular">Añadir Presupuesto</a>
                     </div>
                   </div>
                   <div class="card mb-3 mx-2">
@@ -52,30 +53,30 @@
                       
                       <div class="container mt-2">
                         <div class="row d-flex justify-content-around">
-                            <p class="col-md-3 border border-success py-1">Presupuesto</p>
-                            <p class="col-md-3 border border-success py-1">Gastos</p>
-                            <p class="col-md-3 border border-success py-1">Saldo</p>
+                            <p class="col-4 col-md-3 border border-success text-center py-1 fontSizeTitulos">Presupuesto</p>
+                            <p class="col-3 border border-success text-center py-1 fontSizeTitulos">Gastos</p>
+                            <p class="col-3 border border-success text-center py-1 fontSizeTitulos">Saldo</p>
                         </div>
-                        <div class="row">
+                        <div class="row  d-flex justify-content-around">
                             
-                            <div class="col-md-4">
+                            <div class="col-4 col-md-4">
                                 <div class="d-flex align-items-start justify-content-center">
-                                    <span>$</span>
-                                    <p id="pPresupuesto">0</p>
+                                    <span class="fontSizeTitulos">$</span>
+                                    <p id="pPresupuesto" class="fontSizeTitulos">0</p>
                                 </div>
                                 
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-3 col-md-4">
                                 <div class="d-flex align-items-start justify-content-center">
-                                    <span>$</span>
-                                    <p id="pGastos">0</p>
+                                    <span class="fontSizeTitulos">$</span>
+                                    <p id="pGastos" class="fontSizeTitulos">0</p>
                                 </div>
                                 
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-3 col-md-4">
                                 <div class="d-flex align-items-start justify-content-center">
-                                    <span>$</span>
-                                    <p id="pSaldo">0</p>
+                                    <span class="fontSizeTitulos">$</span>
+                                    <p id="pSaldo" class="fontSizeTitulos">0</p>
                                 </div>
                                 
                             </div>
@@ -109,7 +110,7 @@
                                     <th scope="col"></th>
                                   </tr>
                                 </thead>
-                                <tbody class="table-group-divider" id="bodyTabla">
+                                <tbody class="table-group-divider fontSizeTitulos" id="bodyTabla">
                                     <tr></tr>
                               
                                 </tbody>
