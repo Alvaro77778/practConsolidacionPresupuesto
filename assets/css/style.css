@@ -50,15 +50,17 @@
     .tituloPresupuestoPrincipal{
         
         background: rgb(192, 47, 11);
-        background: linear-gradient(0deg,rgb(30, 0, 37) 1%,rgba(150, 2, 170, 0.959) ,rgb(30, 0, 37) 100%);
-        border: 1px solid rgb(216, 148, 1);
+        background: linear-gradient(0deg,rgb(30, 0, 37) 1%,rgba(142, 2, 170, 0.959) ,rgb(30, 0, 37) 100%);
+        border: 1px solid rgb(70, 48, 2);
+        width: 60%;
+        margin-left: 0.8%;
         
         }
 
     h4{
         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         font-weight:300;
-        
+        padding-top: 3px;
     }
 
 
